@@ -5,6 +5,13 @@ const inputEl = document.querySelector("#validation-input");
 // const dataLength = inputEl.getAttribute("data-length");
 // console.log(dataLength);
 
+function removeClass(item) {
+  inputEl.classList.remove(item);
+}
+function addClass(item) {
+  inputEl.classList.add(item);
+}
+
 inputEl.addEventListener("blur", function () {
   //   const inputValue = inputEl.value;
   //   console.log(inputValue);
@@ -17,10 +24,14 @@ inputEl.addEventListener("blur", function () {
     inputEl.value.split("").length ===
     Number(inputEl.getAttribute("data-length"))
   ) {
-    inputEl.classList.remove("invalid");
-    inputEl.classList.add("valid");
+    removeClass("invalid");
+    addClass("valid");
+    // inputEl.classList.remove("invalid");
+    // inputEl.classList.add("valid");
   } else {
-    inputEl.classList.remove("valid");
-    inputEl.classList.add("invalid");
+    removeClass("valid");
+    addClass("invalid");
+    // inputEl.classList.remove("valid");
+    // inputEl.classList.add("invalid");
   }
 });

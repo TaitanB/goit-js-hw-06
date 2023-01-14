@@ -13,13 +13,22 @@ const images = [
   },
 ];
 
-images.forEach((element) => {
+// images.forEach((element) => {
+//   const imageList = document.querySelector(".gallery");
+//   // console.log(imageList.style);
+
+//   imageList.insertAdjacentHTML(
+//     "beforeend",
+//     `<li><img class = "image" src = "${element.url}" alt = "${element.alt}"/></li>`
+//   );
+//   // console.log(imageList);
+// });
+
+images.map((element) => {
   const imageList = document.querySelector(".gallery");
-  // console.log(imageList.style);
 
   imageList.insertAdjacentHTML(
     "beforeend",
     `<li><img class = "image" src = "${element.url}" alt = "${element.alt}"/></li>`
   );
-  // console.log(imageList);
 });

@@ -18,9 +18,11 @@ btnDestroy.addEventListener("click", destroyBoxes);
 function createBoxes(amount) {
   const initialSize = 30;
 
-  for (let i = 0; i < (amount = inputNumber.value); i += 1) {
+  amount = inputNumber.value;
+
+  for (let i = 0; i < amount; i += 1) {
     // console.log(amount);
-    const size = initialSize + i * 10;
+    let size = initialSize + i * 10;
     const div = document.createElement("div");
     div.style.width = `${size}px`;
     div.style.height = `${size}px`;
