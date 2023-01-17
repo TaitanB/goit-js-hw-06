@@ -24,11 +24,17 @@ const images = [
 //   // console.log(imageList);
 // });
 
-images.map((element) => {
-  const imageList = document.querySelector(".gallery");
+const imageList = document.querySelector(".gallery");
 
-  imageList.insertAdjacentHTML(
-    "beforeend",
-    `<li><img class = "image" src = "${element.url}" alt = "${element.alt}"/></li>`
-  );
-});
+const image = function (element) {
+  return `
+  <li>
+    <img class = "image" src = "${element.url}" alt = "${element.alt}"/>
+  </li>
+  `;
+};
+
+const list = images.map(image).join("");
+
+imageList.insertAdjacentHTML("beforeend", list);
+console.log(imageList);
